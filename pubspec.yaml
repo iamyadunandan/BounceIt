@@ -46,6 +46,8 @@ flutter:
   - assets/slow_rush.jpg
   - assets/origins.jpg
   - assets/blue.jpg
+  - assets/rock.jpg
+  - assets/hiphop.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

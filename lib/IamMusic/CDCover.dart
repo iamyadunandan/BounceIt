@@ -1,3 +1,4 @@
+import 'dart:developer' as Log;
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -19,20 +20,14 @@ class _CDState extends State<CD> {
         alignment: Alignment.center,
         children: <Widget>[
           Container(
-            height: constraints.maxWidth,
-            width: constraints.maxWidth,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.fitHeight,
-                image: AssetImage(widget.image),
-              ),
-              shape: BoxShape.circle,
-              border: Border.fromBorderSide(
-                BorderSide(
-                  color: Colors.grey[50],
-                  width: 4,
-                ),
-              ),
+            height: constraints.maxWidth > constraints.maxHeight
+                ? constraints.maxHeight
+                : constraints.maxWidth,
+            width: constraints.maxWidth > constraints.maxHeight
+                ? constraints.maxHeight
+                : constraints.maxWidth,
+            child: ClipOval(
+              child: Image.asset(widget.image),
             ),
           ),
           Container(
@@ -96,7 +91,7 @@ class _CDCoverState extends State<CDCover> {
                 width: constraints.maxWidth * .7,
                 height: constraints.maxWidth * .7,
                 child: Transform.rotate(
-                  angle: pi * 2 * widget.value,
+                  angle: widget.value*3,
                   child: CD(
                     image: widget.imagePath,
                   ),

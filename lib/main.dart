@@ -1,8 +1,20 @@
+import 'dart:developer';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import 'IamMusic/IamMiracle.dart';
 import 'IamMusic/IamMusic.dart';
 
-void main() => runApp(MyApp());
+import 'IamMusic/IamPlay.dart';
+
+void main() {
+  FlutterError.onError = (FlutterErrorDetails flutterErrorDetails){
+    log(flutterErrorDetails.summary.toString(),stackTrace: flutterErrorDetails.stack,error: flutterErrorDetails.exception);
+  };
+  runApp(MyApp());
+
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -12,42 +24,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      routes: {
+        '/miracle': (BuildContext context){
+          return IamMiracle();
+        },
+        '/play': (BuildContext context){
+          return IamPlay();
+        },
+      },
       home: IamMusic(),
     );
   }
 }
 
-class IamTemp extends StatefulWidget {
-  IamTemp({Key key}) : super(key: key);
-
-  @override
-  _IamTempState createState() => _IamTempState();
-}
-
-class _IamTempState extends State<IamTemp> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: LayoutBuilder(
-        builder: (context,BoxConstraints cons){
-          return Column(
-            children: <Widget>[
-              Container(
-                height: cons.maxHeight*0.13,
-                width: cons.maxWidth,
-              ),
-              Container(
-                height: cons.maxHeight*0.47,
-                width: cons.maxWidth,
-              ),
-              Container(
-                height: cons.maxHeight*0.4,
-                width: cons.maxWidth,
-              ),
-            ],
-          );
-        },
-      ),
-    );
-  }
-}
