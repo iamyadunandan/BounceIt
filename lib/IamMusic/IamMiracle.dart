@@ -9,7 +9,7 @@ class IamMiracle extends StatefulWidget {
 }
 
 class _IamMiracleState extends State<IamMiracle> {
-  ValueNotifier _valueNotifier = ValueNotifier(Colors.teal);
+  ValueNotifier _valueNotifier = ValueNotifier(Colors.deepOrangeAccent);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class _IamMiracleState extends State<IamMiracle> {
           LayoutBuilder(builder: (context, BoxConstraints cons) {
             return Container(
               padding: EdgeInsets.only(top: cons.maxHeight * 0.07),
-              color: Colors.teal,
+              color: Colors.deepOrangeAccent,
               child: Stack(
                 alignment: Alignment.topCenter,
                 children: <Widget>[
@@ -119,6 +119,7 @@ class _IamMiracleState extends State<IamMiracle> {
                                         ),
                                       ),
                                     ),
+                                    //child: toContext.widget,
                                   ),
                                 ),
                                 OverflowBox(
@@ -155,7 +156,7 @@ class _IamMiracleState extends State<IamMiracle> {
                                           ),
                                           Container(
                                             decoration: BoxDecoration(
-                                                color: Colors.teal,
+                                                color: Colors.deepOrangeAccent,
                                                 borderRadius: BorderRadius.only(
                                                     topLeft:
                                                         Radius.circular(16),
@@ -458,7 +459,7 @@ class _IamMiracleState extends State<IamMiracle> {
                         flex: 2,
                         child: Icon(
                           Icons.favorite,
-                          color: Colors.teal,
+                          color: Colors.deepOrangeAccent,
                         ),
                       ),
                       Flexible(

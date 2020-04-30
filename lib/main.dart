@@ -22,6 +22,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        backgroundColor: Colors.white,
+        scaffoldBackgroundColor: Colors.white,
+        cardColor: Colors.white,
+        canvasColor: Colors.white,
         primarySwatch: Colors.blue,
       ),
       routes: {

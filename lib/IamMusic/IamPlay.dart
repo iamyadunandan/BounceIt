@@ -46,7 +46,7 @@ class _IamPlayState extends State<IamPlay> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal,
+      backgroundColor: Colors.deepOrangeAccent,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -99,7 +99,7 @@ class _IamPlayState extends State<IamPlay> with TickerProviderStateMixin {
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.teal,
+                        color: Colors.deepOrangeAccent,
                         blurRadius: 65,
                       )
                     ],
@@ -121,7 +121,7 @@ class _IamPlayState extends State<IamPlay> with TickerProviderStateMixin {
                                     shape: BoxShape.circle,
                                     border: Border.fromBorderSide(
                                       BorderSide(
-                                        color: Colors.teal.withAlpha(100),
+                                        color: Colors.deepOrangeAccent.withAlpha(100),
                                         width: 4,
                                       ),
                                     ),
@@ -209,7 +209,7 @@ class _IamPlayState extends State<IamPlay> with TickerProviderStateMixin {
                                             i / barH.length) {
                                           color = Colors.grey[400];
                                         } else {
-                                          color = Colors.teal;
+                                          color = Colors.deepOrangeAccent;
                                         }
                                         ws.add(
                                           Container(

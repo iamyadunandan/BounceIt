@@ -19,7 +19,7 @@ class IamMusic extends StatefulWidget {
 class _IamMusicState extends State<IamMusic>
     with SingleTickerProviderStateMixin {
   Color BACKGROUND_GREEN = Colors.green;
-  Color BACKGROUND = Colors.grey[50];
+  Color BACKGROUND = Colors.white;
   Color TRANPERENT = Colors.transparent;
   PageController _pvController;
   AnimationController _anController;
@@ -35,13 +35,14 @@ class _IamMusicState extends State<IamMusic>
   ];
   Tween<Color> _tween;
   Animation _animation;
-  ValueNotifier<Color> _valueNotifier = ValueNotifier(Colors.teal);
+  ValueNotifier<Color> _valueNotifier = ValueNotifier(Colors.deepOrangeAccent);
 
   @override
   void initState() {
     super.initState();
     _anController = AnimationController(vsync: this);
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +69,7 @@ class _IamMusicState extends State<IamMusic>
           color: BACKGROUND,
           child: SafeArea(
             child: Scaffold(
-              backgroundColor: Colors.grey[100],
+              backgroundColor: Colors.white,
               body:
                   LayoutBuilder(builder: (context, BoxConstraints constraints) {
                 var pad = constraints.maxWidth / 16;
@@ -113,18 +114,24 @@ class _IamMusicState extends State<IamMusic>
                                   boxShadow: [
                                     BoxShadow(
                                       color: Colors.grey[350],
-                                      offset: Offset(0, 10),
+                                      offset: Offset(0, 0),
                                       spreadRadius: 1,
-                                      blurRadius: 25,
+                                      blurRadius: 1,
                                     )
                                   ],
                                   borderRadius: BorderRadius.circular(32),
                                   color: BACKGROUND,
                                 ),
-                                child: Container(
-                                  alignment: Alignment.centerLeft,
-                                  padding: EdgeInsets.only(left: 16),
-                                  child: Icon(Icons.search),
+                                child: Row(
+                                  children: <Widget>[
+                                    Container(
+                                      alignment: Alignment.centerLeft,
+                                      padding: EdgeInsets.only(left: 16),
+                                      child: Icon(Icons.search),
+                                    ),
+                                    VerticalDivider(color: Colors.transparent,),
+                                    Text('search for a song',style: Theme.of(context).textTheme.caption,)
+                                  ],
                                 ),
                               ),
                             ],
@@ -243,7 +250,7 @@ class _IamMusicState extends State<IamMusic>
                                               BlendMode.darken,
                                             ),
                                           ),
-                                          color: Colors.grey[50],
+                                          color: Colors.white,
                                           borderRadius:
                                               BorderRadius.circular(32),
                                         ),
@@ -253,7 +260,7 @@ class _IamMusicState extends State<IamMusic>
                                         child: Text(
                                           _genres[i],
                                           style: TextStyle(
-                                            color: Colors.grey[50],
+                                            color: Colors.white,
                                             fontWeight: FontWeight.w900,
                                             fontSize:
                                                 constraints.maxHeight * .09,
@@ -311,7 +318,7 @@ class _IamMusicState extends State<IamMusic>
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              Colors.grey[100],
+                                                              Colors.white,
                                                           borderRadius:
                                                               BorderRadius.only(
                                                             topRight:
@@ -389,7 +396,7 @@ class _IamMusicState extends State<IamMusic>
                                                       Icons.play_arrow,
                                                       size:
                                                           cons.maxHeight * 0.4,
-                                                      color: Colors.grey[50],
+                                                      color: Colors.white,
                                                     ),
                                                   ),
                                                 ),

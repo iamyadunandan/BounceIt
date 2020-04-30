@@ -32,7 +32,7 @@ class _IamPageViewState extends State<IamPageView>
   ];
   int _currentPage = 0;
   List<Color> _colors = [
-    Colors.teal,
+    Colors.deepOrangeAccent,
     Colors.red,
     Colors.green[700],
     Colors.blue[400],
@@ -83,10 +83,11 @@ class _IamPageViewState extends State<IamPageView>
 
   @override
   Widget build(BuildContext context) {
-    return PageView.builder(
+    return PageView.builder(      
       pageSnapping: true,
       controller: _pvController,
       itemCount: widget.list.length,
+      
       itemBuilder: (context, i) {
         return LayoutBuilder(
           builder: (context, BoxConstraints cons) {
@@ -100,8 +101,8 @@ class _IamPageViewState extends State<IamPageView>
                         animation: anim,
                         builder: (context, child) {
                           return Container(
-                            decoration: BoxDecoration(
-                              color: Colors.grey[100],
+                            decoration: BoxDecoration(                              
+                              color: Colors.white,
                               borderRadius: BorderRadius.only(
                                 topRight: Radius.circular(
                                   32 * (anim.value) * 5,
@@ -133,19 +134,20 @@ class _IamPageViewState extends State<IamPageView>
                               }
                             : null,
                         child: Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 0, 16) +
+                          margin: EdgeInsets.fromLTRB(0, 2, 0, 16) +
                               (EdgeInsets.all(1) * (50 * _animations[i]).abs()),
                           //padding: EdgeInsets.all(16),
                           width: cons.maxWidth / 2,
                           height: cons.maxHeight,
                           decoration: BoxDecoration(
-                              color: Colors.grey[50],
+                              color: Colors.white,
                               borderRadius: BorderRadius.circular(32),
+                              border: Border.fromBorderSide(BorderSide(color: Colors.grey[350],width: 1)),
                               boxShadow: [
                                 BoxShadow(
-                                    offset: Offset(0, 5),
-                                    blurRadius: 20,
-                                    color: Colors.grey[800].withAlpha(50))
+                                    offset: Offset(0, 0),
+                                    blurRadius: 2,
+                                    color: Colors.grey[900].withAlpha(50))
                               ]),
                           child: LayoutBuilder(
                               builder: (context, BoxConstraints constraints) {
@@ -212,7 +214,7 @@ class _IamPageViewState extends State<IamPageView>
                                         alignment: Alignment.center,
                                         child: Icon(
                                           Icons.add,
-                                          color: Colors.grey[50],
+                                          color: Colors.white,
                                         ),
                                       )
                                     ],
