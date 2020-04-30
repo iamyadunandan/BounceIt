@@ -4,7 +4,7 @@ A Flutter demo project where I Implement the Dribble ideas through actual Code, 
 You can check out Implementation code above. Thank you.
 
 # TheMusicBounce
-This is music player with cool animations, has been implemented using Flutter check out the code above, and the looks below.
+This is a music player with cool animations, has been implemented using Flutter check out the code above, and the looks below.
 
 ![](https://github.com/iamyadunandan/BounceIt/blob/master/output2.webp)
 
